@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ -z "$GITIGNORE_REPO" ] ; then
+    echo '$GITIGNORE_REPO not set'
+    exit
+fi
+
+if [ ! -d "$GITIGNORE_REPO" ] ; then
+    echo '$GITIGNORE_REPO is no directory'
+    exit
+fi
+
+if [ -z "$1" ] ; then
+    echo "usage: $0 language"
+    echo "example: $0 ruby"
+    exit
+fi
+
+infile="$GITIGNORE_REPO/$1.gitignore" 
+
+if [ ! -f "$infile" ] ; then
+    echo "No .gitignore found for $1"
+    exit
+fi
+
+outfile='./.gitignore'
+
+echo "# $1\n" >> "$outfile"
+cat "$infile" >> "$outfile"
+echo "\n"     >> "$outfile"
