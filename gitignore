@@ -17,6 +17,14 @@ if [ -z "$1" ] ; then
     exit
 fi
 
+if [ "$1" = "list" ] ; then
+    files="$GITIGNORE_REPO/*.gitignore"; 
+    for file in $files; do
+       echo $(basename ${file%.*})
+    done
+    exit
+fi
+
 infile="$GITIGNORE_REPO/$1.gitignore" 
 
 if [ ! -f "$infile" ] ; then
