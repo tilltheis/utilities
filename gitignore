@@ -13,6 +13,7 @@ fi
 if [ -z "$1" ] ; then
     echo "usage: $0 language"
     echo "example: $0 ruby"
+    echo "example: $0 Global/Eclipse"
     exit
 fi
 
