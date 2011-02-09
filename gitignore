@@ -1,4 +1,7 @@
 #!/bin/sh
+# Update the local .gitignore from a repository of predefined ingore lists.
+# The repository is a clone of git://github.com/github/gitignore and
+# the $GITIGNORE_REPO environment variable points to its directory.
 
 if [ -z "$GITIGNORE_REPO" ] ; then
     echo '$GITIGNORE_REPO not set'
@@ -11,6 +14,7 @@ if [ ! -d "$GITIGNORE_REPO" ] ; then
 fi
 
 if [ -z "$1" ] ; then
+    echo "description: Update the local .gitignore from a repository of predefined ingore lists."
     echo "usage: $0 language"
     echo "example: $0 Ruby"
     echo "example: $0 Global/Eclipse"
