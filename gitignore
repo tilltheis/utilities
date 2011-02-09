@@ -24,11 +24,14 @@ if [ -z "$1" ] ; then
 fi
 
 if [ "$1" = "list" ] ; then
+    clean_files=""
     files="`find "$GITIGNORE_REPO" -name '*.gitignore'`"
     for file in $files; do
        without_ext=${file%.*}
-       echo ${without_ext#"$GITIGNORE_REPO/"}
+       basename=${without_ext#"$GITIGNORE_REPO/"}
+       clean_files="$clean_files\n$basename"
     done
+    echo $clean_files | column
     exit
 fi
 
