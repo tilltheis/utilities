@@ -16,8 +16,10 @@ fi
 if [ -z "$1" ] ; then
     echo "description: Update the local .gitignore from a repository of predefined ingore lists."
     echo "usage: $0 language"
+    echo "usage: $0 'list'"
     echo "example: $0 Ruby"
     echo "example: $0 Global/Eclipse"
+    echo "example: $0 list"
     exit
 fi
 
