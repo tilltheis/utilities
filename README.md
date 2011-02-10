@@ -1,6 +1,6 @@
 Gitignore
 =========
-This is a small tool that helps you to merge http://github.com/github/gitignore presets into your .gitignore file
+This is a small tool that helps you to merge [github/gitignore](http://github.com/github/gitignore) presets into your .gitignore file
 
 Install
 -------
