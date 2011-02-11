@@ -25,11 +25,13 @@ fi
 
 if [ "$1" = "list" ] ; then
     clean_files=""
-    files="`find "$GITIGNORE_REPO" -name '*.gitignore'`"
-    for file in $files; do
-       without_ext=${file%.*}
-       basename=${without_ext#"$GITIGNORE_REPO/"}
-       clean_files="$clean_files\n$basename"
+    # cd to $GITIGNORE_REPO to get rid of its (possibly existing) spaces
+    files=$( cd "$GITIGNORE_REPO" && find . -name '*.gitignore' )
+    # $files (hopefully) doesn't contain paths with spaces
+    for file in $files ; do
+        without_ext=${file%.*}
+        basename=${without_ext#'./'}
+        clean_files="$clean_files\n$basename"
     done
     echo $clean_files | column
     exit
