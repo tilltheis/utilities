@@ -10,3 +10,14 @@ Install
     ln -s "`pwd`/utilities/gitignore" /usr/local/bin/gitignore
     echo "Please add the following to the end of your ~/.bashrc (~/.profile on Mac):"
     echo "export GITIGNORE_REPO='${GITIGNORE_REPO}'"
+
+Usage
+-----
+    description: Update the local .gitignore from a repository of predefined ignore lists.
+    
+    usage: gitignore language
+    usage: gitignore 'list'
+    
+    example: gitignore Ruby
+    example: gitignore Global/Eclipse
+    example: gitignore list
