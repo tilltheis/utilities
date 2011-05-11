@@ -13,13 +13,15 @@ if [ ! -d "$GITIGNORE_REPO" ] ; then
     exit 1
 fi
 
+bin='gitignore'
+
 if [ -z "$1" ] ; then
     echo "description: Update the local .gitignore from a repository of predefined ignore lists."
-    echo "usage: $0 language"
-    echo "usage: $0 'list'"
-    echo "example: $0 Ruby"
-    echo "example: $0 Global/Eclipse"
-    echo "example: $0 list"
+    echo "usage: $bin language"
+    echo "usage: $bin 'list'"
+    echo "example: $bin Ruby"
+    echo "example: $bin Global/Eclipse"
+    echo "example: $bin list"
     exit
 fi
 
