@@ -17,8 +17,12 @@ bin='gitignore'
 
 if [ -z "$1" ] ; then
     echo "description: Update the local .gitignore from a repository of predefined ignore lists."
+    echo
+
     echo "usage: $bin language"
     echo "usage: $bin 'list'"
+    echo
+
     echo "example: $bin Ruby"
     echo "example: $bin Global/Eclipse"
     echo "example: $bin list"
